@@ -9,7 +9,9 @@ export default function App() {
   const [backgroundColor, setBackgroundColor] = useState('#fff');
 
   const handleAddTodo = () => {
-    setTodoCount(todoCount + 1);
+    if (todoCount < 10){
+      setTodoCount(todoCount + 1);
+    }
   };
 
   const deleteTodo = () => {
@@ -23,7 +25,7 @@ export default function App() {
   };
 
   return (
-    <ScrollView contentContainerStyle={{ ...styles.container, backgroundColor: backgroundColor }}>
+    <ScrollView style={{ backgroundColor: backgroundColor }} contentContainerStyle={styles.container}>
       <View style={styles.colorchange}>
         <ColorChange color="yellow" onPress={changeBackgroundColor} />
         <ColorChange color="orange" onPress={changeBackgroundColor} />
