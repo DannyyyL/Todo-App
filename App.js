@@ -33,7 +33,7 @@ export default function App() {
         <ColorChange color="white" onPress={changeBackgroundColor}/>
         <ColorChange color="#6FC" onPress={changeBackgroundColor}/>
       </View>
-      <Text style={styles.title}>Todo List 📝</Text>
+      <Text style={styles.title}>To-do List 📝</Text>
       <Button
         title="Press On Me To Do More"
         style={{width: '20%', height: 100, backgroundColor: "#555"}}
