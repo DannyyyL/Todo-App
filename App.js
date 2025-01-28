@@ -68,11 +68,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 30,
-    paddingBottom: 10,
-  },
+  title: Platform.select({ 
+    web: {
+      fontWeight: 'bold',
+      fontSize: 50,
+      paddingBottom: 10,
+    },
+    default: {
+      fontWeight: 'bold',
+      fontSize: 30,
+      paddingBottom: 10,
+    }
+  }),
   row: {
     flexDirection: 'row',
   },
@@ -80,8 +87,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    //top: 50,
-    //left: 50,
-    //position: 'absolute',
   }
 });
