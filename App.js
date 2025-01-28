@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { ScrollView, StyleSheet, Text, View, Button} from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Button, Platform} from 'react-native';
 import AddTodo from './components/AddTodo.js';
 import Checkbox from './components/Checkbox.js';
 import ColorChange from './components/ColorChange.js';
@@ -25,7 +25,11 @@ export default function App() {
   };
 
   return (
-    <ScrollView style={{ backgroundColor: backgroundColor }} contentContainerStyle={styles.container}>
+    <ScrollView style={{ 
+      backgroundColor: backgroundColor,
+      ...(Platform.OS == 'web' ? {height: '100vh'} : {})
+      }} 
+    contentContainerStyle={styles.container}>
       <View style={styles.colorchange}>
         <ColorChange color="yellow" onPress={changeBackgroundColor} />
         <ColorChange color="orange" onPress={changeBackgroundColor} />
